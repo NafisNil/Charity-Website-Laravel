@@ -89,7 +89,7 @@ class SliderController extends Controller
         return redirect()->route('slider.index')->with('status','Data deleted successfully!');
     }
 
-        private function _uploadImage($request, $about)
+    private function _uploadImage($request, $about)
     {
         # code...
         if( $request->hasFile('photo') ) {

@@ -11,7 +11,7 @@ class AboutRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,10 @@ class AboutRequest extends FormRequest
     {
         return [
             //
+            'title' => 'nullable|string|max:255',
+            'description' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // 2MB max size
+            'we_can' => 'nullable|string|max:500',
         ];
     }
 }
